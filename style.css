@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/*! NavBar  */
+nav {
+    height: 70px;
+    width: 100%;
+    padding: 0 20px;
+    background-color: #4169e1;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav figure {
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+nav figure img {
+    height: 100%;
+    width: 200px;
+}
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav li {
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+nav li:hover {
+    background-color: white;
+    color: black;
+    transition: 0.3s linear;
+}
+
+/*! Home Section */
+#homesection {
+    height: calc(100vh - 70px);
+    width: 100%;
+    border: 1px solid black;
+    background-color: lightgray;
+}
+
+/*! Product Section  */
+#productssection {
+    min-height: 100vh;
+    width: 100%;
+    border: 2px solid black;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card-container {
+    width: 250px;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 15px;
+}
+
+.card-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-container h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.card-container p {
+    font-size: 16px;
+    margin: 5px 0;
+}

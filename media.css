@@ -1,0 +1,15 @@
+@media (max-width: 768){
+    nav {
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav figure img {
+        width: 150px;
+    }
+}
