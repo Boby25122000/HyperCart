@@ -6,6 +6,10 @@
     <title>HyperCart</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+    <link rel="icon" href="Asset/icon.png">
 </head>
 <body>
     <!--! NavBar  -->
@@ -14,18 +18,26 @@
                 <img src="Asset/logo.png" alt="logo">
             </figure>
 
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Search for products, brands, and more">
+            </div>
+    
             <ul>
-                <li><a href="homesection">Home</a></li>
-                <li><a href="productssection">Produc</a>t</li>
-                <li><a href="">Login</a></li>
-                <li><a href="">Signup</a></li>
+                <li><a href="#homesection">Home</a></li>
+                <li><a href="#productssection">Produc</a>t</li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Signup</a></li>
             </ul>
         </nav>
 
         <!--! Home  -->
         <section id="homesection">
             <div class="homecontainer">
-                <h1>Welcome to HyperCart</h1>
+                <h1>Welcome to </h1>
+                <img src="Asset/logo.png" alt="">
+            </div>
+            <div class="trolly">
+                <img src="Asset/trolly2.png" alt="">
             </div>
         </section>
 
@@ -37,6 +49,61 @@
         <!--! Cart Section  -->
         <section id="cartSection"></section>
 
+        <footer>
+            <div class="footer-container">
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#homesection">Home</a></li>
+                        <li><a href="#productssection">Products</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">Offers</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Customer Support -->
+                <div class="footer-column">
+                    <h3>Customer Support</h3>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+        
+                <!-- About Us -->
+                <div class="footer-column">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">Company Info</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Social Media & Newsletter -->
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+                    <h3>Newsletter</h3>
+                    <input type="email" placeholder="Enter your email">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        
+            <div class="footer-bottom">
+                <p>© 2025 HyperCart. All Rights Reserved.</p>
+            </div>
+        </footer>
+        
     <script src="script.js"></script>
 </body>
 </html>
