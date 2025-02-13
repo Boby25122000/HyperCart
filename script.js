@@ -54,6 +54,36 @@ function displayAllProducts(allProducts) {
 }
 
 function handleAddToCart(product) { 
-    console.log("added to cart");
-    console.log(product);
+    // console.log("added to cart");
+    // console.log(product);
+
+    // initializing cart variable
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // finding index pf existing product
+    let existingProductIndex = cart.findIndex((ele) => ele.id === product.id);
+
+    if (existingProductIndex !== -1) {
+        cart[existingProductIndex].quantity  += 1;        // cart[existingProductIndex].quantity+1
+    } else {
+        cart.push({ ...product, quantity: 1})
+    }
+
+    // store cart in localStorage
+    localStorage.setItem("cart",JSON.stringify(cart));
+
+    // alert msg
+    alert(`${product.title} added to cart`);
+
+    displayCartItems()
 }
+
+function displayCartItems() {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    console.log(cart);
+
+}
+
+window.addEventListener("load" ,() => {
+    displayCartItems()
+})
