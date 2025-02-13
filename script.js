@@ -79,9 +79,43 @@ function handleAddToCart(product) {
 }
 
 function displayCartItems() {
-    let cart = JSON.parse(localStorage.getItem("cart"));
-    console.log(cart);
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    // console.log(cart);
 
+    let cartsection = document.getElementById("cartSection");
+    cartsection.innerHTML = "<h1>My Cart</h1>";
+
+    if (cart.length === 0) {
+        cartsection.innerHTML = "<h1>Cart is Empty</h1>";
+    } else {
+        cart.map((item,index) => {
+            let div =document.createElement("div");
+            div.innerHTML = `
+            <img src='${item.image}'>
+            <h2>${item.title}</h2> 
+            <p>Quantity ${item.quantity}</p>
+            <p>Price ${item.quantity * item.price}</p>
+            <button onclick='removeCartItem(${index})'>remove</button>
+            `;
+            cartsection.append(div);
+        }); 
+    }
+}
+
+function removeCartItem(index) {
+    console.log("remove", index);
+    
+    let cart = JSON.parse(localStorage.getItem("cart")) || []
+
+    if (cart[index].quantity > 1) {
+        cart[index].quantity -= 1
+    } else {
+        cart.splice(index,1)
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart))
+
+    displayCartItems()
 }
 
 window.addEventListener("load" ,() => {
