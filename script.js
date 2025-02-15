@@ -1,4 +1,21 @@
-let productssection = document.getElementById("productssection");
+document.addEventListener("DOMContentLoaded", () => {
+    displayCartItems(); // Load cart data on page load
+});
+
+// Function to update cart count dynamically
+function updateCartCount() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById("cartCount").innerText = totalItems;
+}
+
+// Handle Cart Toggle Like Flipkart
+document.getElementById("myCartBtn").addEventListener("click", () => {
+    let cartSection = document.getElementById("cartSection");
+    cartSection.classList.toggle("show-cart"); // Toggle class for visibility
+});
+
+
 
 async function getProducts() {
     try {
@@ -13,6 +30,7 @@ async function getProducts() {
 
 getProducts();
 
+let productssection = document.getElementById("productssection");
 function displayAllProducts(allProducts) {
     // console.log(allProducts);
 
@@ -31,8 +49,8 @@ function displayAllProducts(allProducts) {
 
         cardContainer.innerHTML = `
         <div>
-        <img src= '${ele.image}'>
-        <h2>${ele.title.slice(0,30)}....</h2>
+            <img src= '${ele.image}'>
+            <h2>${ele.title.slice(0,30)}....</h2>
         </div>
 
         <h4>Rs.${ele.price}</h4>
@@ -83,10 +101,15 @@ function displayCartItems() {
     // console.log(cart);
 
     let cartsection = document.getElementById("cartSection");
-    cartsection.innerHTML = "<h1>My Cart</h1>";
+    // cartsection.innerHTML = "<h1>My Cart</h1>";
+    cartSection.innerHTML = `
+    <button id="myCartBtn">
+        <i class="bi bi-cart4"></i> My Cart <span id="cartCount">${cart.length}</span>
+    </button>
+`;
 
     if (cart.length === 0) {
-        cartsection.innerHTML = "<h1>Cart is Empty</h1>";
+        cartsection.innerHTML += "<h1>Cart is Empty</h1>";
     } else {
         cart.map((item,index) => {
             let div =document.createElement("div");
@@ -97,13 +120,15 @@ function displayCartItems() {
             <p>Price ${item.quantity * item.price}</p>
             <button onclick='removeCartItem(${index})'>remove</button>
             `;
-            cartsection.append(div);
+            cartsection.appendChild(div);
         }); 
     }
+    updateCartCount();
+
 }
 
 function removeCartItem(index) {
-    console.log("remove", index);
+    // console.log("remove", index);
     
     let cart = JSON.parse(localStorage.getItem("cart")) || []
 
@@ -118,6 +143,7 @@ function removeCartItem(index) {
     displayCartItems()
 }
 
-window.addEventListener("load" ,() => {
-    displayCartItems()
-})
+// window.addEventListener("load" ,() => {
+//     displayCartItems()
+// })
+window.addEventListener("load", displayCartItems);

@@ -24,19 +24,20 @@ nav {
     justify-content: space-between;
     align-items: center;
     position: fixed;
+    top: 0;
     z-index: 999;
 }
 
 /* Logo */
 nav figure {
-    width: 200px;
-    align-items: center;
-    justify-content: center;
+    width: 150px;
+    /* align-items: center;
+    justify-content: center; */
 }
 
 nav figure img {
-    height: 100%;
-    width: 200px;
+    /* height: 100%; */
+    width: 100%;
 }
 
 /* Search Bar */
@@ -44,6 +45,7 @@ nav figure img {
     flex-grow: 1;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .search-box {
@@ -62,8 +64,9 @@ nav ul {
 }
 
 nav li {
-    padding: 5px 10px;
+    padding: 8px 12px;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 nav li:hover {
@@ -72,14 +75,17 @@ nav li:hover {
     transition: 0.3s linear;
 }
 
+/* Hide Dropdown by Default */
+.mobile-nav {
+    display: none;
+}
+
 /*! Home Section */
 #homesection {
     height: calc(100vh - 60px);
     width: 100%;
     border: 1px solid black;
     background-color: rgba(65, 105, 225, 0.304);
-    /* background-size: cover;
-    background-position: center; */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -95,17 +101,18 @@ nav li:hover {
     background-color: #4169e1;
     border-radius: 10px;
     box-shadow: 0 0 20px black;
-    margin-left: 30px;
+    text-align: center;
+    margin: 20px;
 }
 
 .homecontainer h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
 }
 .homecontainer img {
-    height: 80px;
+    height: 70px;
 }
 .trolly img {
-    height: 300px;
+    height: 280px;
 }
 
 /*! Product Section */
@@ -179,15 +186,57 @@ nav li:hover {
 
 
 /*! Cart Section  */
-#cartSection {
+/* #cartSection {
     height: 50px;
-    width: 100%;
+    width: 350px;
     background: white;
     border-top: 1px solid rgba(0, 0, 0, 0.556);
     position: fixed;
-    top: 100;
     bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+#cartSection button i {
+    color: black;
 }
+
+/* Floating Cart Button like Flipkart */
+#myCartBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff9f00;  /* Flipkart Orange */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Cart Icon */
+#myCartBtn i {
+    font-size: 20px;
+}
+
+/* Cart Count Badge */
+#cartCount {
+    background: red;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
 
 /*! Footer  */
 /* Footer Styling */
@@ -288,47 +337,3 @@ footer {
 
 
 
-/*! Responsive Design */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .search-container {
-        width: 100%;
-        margin: 10px 0;
-    }
-    
-    .search-box {
-        width: 80%;
-    }
-
-    ul {
-        flex-direction: column;
-        padding: 0;
-    }
-
-    ul li {
-        margin: 5px 0;
-    }
-
-    .footer-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .footer-container {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .footer-column {
-        text-align: center;
-    }
-
-    .social-icons {
-        justify-content: center;
-    }
-}
