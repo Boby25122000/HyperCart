@@ -67,8 +67,8 @@
 /* Mobile Devices */
 @media (max-width: 540px) {
     .search-box {
-        width: 130px;
-        height: 20px;
+        width: 150px;
+        height: 25px;
         font-size: 10px;
     }
 
