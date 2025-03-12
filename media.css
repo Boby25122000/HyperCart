@@ -39,6 +39,11 @@
     .nav ul {
         display: none; /* Hide normal navbar */
     }
+
+    #homesection {
+        height: 300px;
+    }
+
     .homecontainer {
         width: 500px;
         height: 100px;
@@ -75,8 +80,8 @@
         font-size: 1.5rem;
     }
 
-    .dropdown-menu {
-        top: 53px;
+    #homesection {
+        height: 200px;
     }
 
     nav ul {
