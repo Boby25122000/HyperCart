@@ -147,3 +147,16 @@ function removeCartItem(index) {
 //     displayCartItems()
 // })
 window.addEventListener("load", displayCartItems);
+
+
+
+
+//! humburger
+function toggleMenu() {
+    const menu = document.getElementById("dropdownMenu");
+    if (menu.style.display === "flex") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "flex";
+    }
+}

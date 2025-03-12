@@ -13,37 +13,33 @@
 </head>
 <body>
     <!--! NavBar  -->
-        <nav>
-            <figure>
-                <img src="Asset/logo.png" alt="logo">
-            </figure>
-
-            <div class="search-container">
-                <input type="text" class="search-box" placeholder="Search for products, brands, and more">
-            </div>
+    <nav>
+        <figure>
+            <img src="Asset/logo.png" alt="logo">
+        </figure>
     
-            <ul>
-                <li><a href="#homesection">Home</a></li>
-                <li><a href="#productssection">Produc</a>t</li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="signup.html">Signup</a></li>
-            </ul>
-
-            <div class="dropdown">
-                <button id="home-btn">Home</button>
-                <div class="dropdown-content" id="home-dropdown">
-                    <a href="#productssection">Products</a>
-                </div>
-            </div>
-
-            <div class="dropdown">
-                <button id="login-btn">Login</button>
-                <div class="dropdown-content" id="login-dropdown">
-                    <a href="signup.html">Signup</a>
-                </div>
-            </div>
-        </nav>
-
+        <div class="search-container">
+            <input type="text" class="search-box" placeholder="Search for products, brands, and more">
+        </div>
+    
+        <ul class="nav-links">
+            <li><a href="#homesection">Home</a></li>
+            <li><a href="#productssection">Product</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Signup</a></li>
+        </ul>
+        
+        <!--! small screen -->
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+    
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="#homesection">Home</a>
+            <a href="#productssection">Product</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Signup</a>
+        </div>
+    </nav>
+    
         <!--! Home  -->
         <section id="homesection">
             <div class="homecontainer">
