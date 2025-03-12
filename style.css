@@ -198,23 +198,11 @@ figure img{
 
 
 /*! Cart Section  */
-/* #cartSection {
-    height: 50px;
-    width: 350px;
-    background: white;
-    border-top: 1px solid rgba(0, 0, 0, 0.556);
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
 #cartSection button i {
     color: black;
 }
 
-/* Floating Cart Button like Flipkart */
+/*Cart Button */
 #myCartBtn {
     position: fixed;
     bottom: 20px;
@@ -233,7 +221,6 @@ figure img{
     gap: 10px;
 }
 
-/* Cart Icon */
 #myCartBtn i {
     font-size: 20px;
 }
